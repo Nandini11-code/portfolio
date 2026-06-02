@@ -1,10 +1,10 @@
 import React from 'react';
-import Navbar from './components/navbar';
-import Hero from './components/hero';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
 import About from './components/About';
-import Experience from './components/experience';
+import Experience from './components/Experience';
 import Branding from './components/Branding';
-import Contact from "./components/Contact";
+import Contact from './components/Contact';
 import './App.css';
 
 function App() {
