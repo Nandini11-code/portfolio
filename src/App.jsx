@@ -4,7 +4,7 @@ import Hero from './components/hero';
 import About from './components/About';
 import Experience from './components/experience';
 import Branding from './components/Branding';
-import Contact from './components/contact';
+import Contact from "./components/Contact";
 import './App.css';
 
 function App() {
