@@ -1,18 +1,19 @@
 .contactSection {
   width: 100%;
-  min-height: 75vh;
+  min-height: 85vh;
   display: flex;
   align-items: center;
+  justify-content: center;
   background-color: #ffffff;
-  padding: 6rem 4%;
+  padding: 6rem 8%;
   box-sizing: border-box;
 }
 
-/* FIX: Stops infinite wide separation on high-resolution screens */
+/* Forces two columns on desktop exactly like Image 1 */
 .contactContainer {
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 4rem;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 6rem;
   align-items: center;
   width: 100%;
   max-width: 1200px;
@@ -23,61 +24,154 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  text-align: left;
 }
 
 .contactMainTitle {
   font-family: 'Playfair Display', 'Didot', serif;
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-size: clamp(2.8rem, 4.5vw, 4rem);
   font-weight: 400;
   color: #2c2a38;
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 1.8rem 0;
   line-height: 1.2;
 }
 
 .contactSubText {
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 .contactSubText p {
   font-family: 'Inter', sans-serif;
-  font-size: 1.3rem;
-  color: #444444;
-  line-height: 1.5;
-  margin: 0 0 0.5rem 0;
+  font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+  color: #555555;
+  line-height: 1.6;
+  margin: 0 0 0.8rem 0;
 }
 
+.highlightParagraph {
+  font-weight: 500;
+  color: #131213 !important;
+}
+
+/* Premium Button Styling matches Image 1 */
 .getInTouchBtn {
   display: inline-block;
-  padding: 16px 42px;
+  padding: 16px 48px;
   background-color: #555555;
   color: #ffffff;
   font-family: 'Inter', sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 500;
   text-decoration: none;
   border-radius: 100px;
-  transition: all 0.2s ease;
+  transition: all 0.25s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .getInTouchBtn:hover {
   background-color: #131213;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Beautiful Links Grid Layout */
+.contactLinksGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.contactGridItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.gridLabel {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #999999;
+  font-weight: 600;
+}
+
+.gridLink {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  color: #2c2a38;
+  text-decoration: none;
+  word-break: break-all;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  line-height: 1.4;
+}
+
+.gridLink:hover {
+  color: #555555;
+  text-decoration: underline;
+}
+
+/* Image Wrappers matching perfectly with Image 1 */
+.contactImageWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .contactGraphic {
   width: 100%;
-  max-width: 440px;
+  max-width: 480px;
   height: auto;
   display: block;
-  margin: 0 auto;
+  object-fit: contain;
 }
 
+/* Entry Animation for Grid Reveal */
+.animateFadeIn {
+  animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Clean Responsiveness for tablets and phones */
 @media (max-width: 968px) {
+  .contactSection {
+    padding: 5rem 6%;
+  }
+
   .contactContainer {
     grid-template-columns: 1fr;
-    text-align: center;
-    gap: 3rem;
+    gap: 4rem;
   }
+
   .contactContent {
     align-items: center;
+    text-align: center;
+  }
+
+  .contactLinksGrid {
+    max-width: 500px;
+    margin: 1.5rem auto 0 auto;
+  }
+}
+
+@media (max-width: 520px) {
+  .contactLinksGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    text-align: center;
   }
 }
