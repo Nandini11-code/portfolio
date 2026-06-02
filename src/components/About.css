@@ -1,0 +1,89 @@
+.aboutSection {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: #dad7cd;
+  padding: 6rem 4%;
+  box-sizing: border-box;
+}
+
+/* FIX: Centers your content grid beautifully with a professional desktop ceiling */
+.aboutContainer {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px; /* Keeps picture and typography grouped comfortably close */
+  margin: 0 auto;    /* Centers the layout in the middle of the screen */
+}
+
+.aboutTitle {
+  font-family: 'Playfair Display', 'Didot', serif;
+  font-size: clamp(2.5rem, 4.5vw, 3.5rem);
+  font-weight: 400;
+  color: #2c2a38;
+  margin: 0 0 2rem 0;
+}
+
+.aboutText p {
+  font-family: 'Inter', sans-serif;
+  /* font-size: 1.05rem; */
+  color: #555555;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+}
+
+.skillsToolsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  margin-top: 3.5rem;
+}
+
+.skillsBlock h3, .toolsBlock h3 {
+  font-family: 'Playfair Display', 'Didot', serif;
+font-size: 1.15rem;
+  font-weight: 400;
+  color: #2c2a38;
+  margin: 0 0 1.2rem 0;
+}
+
+.skillsBlock ul, .toolsBlock ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skillsBlock li, .toolsBlock li {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: #666666;
+  margin-bottom: 0.6rem;
+}
+
+.aboutImageWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.aboutProfilePic {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  border-radius: 28px;
+  object-fit: cover;
+}
+
+@media (max-width: 968px) {
+  .aboutContainer {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+  .aboutImageWrapper {
+    grid-row: 1;
+  }
+}

@@ -1,0 +1,122 @@
+.brandingSection {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: #dad7cd; /* Clean light mode minimalist background */
+  padding: 8rem 6%;
+  box-sizing: border-box;
+}
+
+/* FIX: Forces all inner content into a clean top-to-bottom vertical stack layout */
+.brandingContainer {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 7rem; /* Generous breathing room between your main section title and projects */
+}
+
+/* Large Main Section Title */
+.brandingBgTitle {
+  font-family: 'Playfair Display', 'Didot', serif;
+  font-size: clamp(4rem, 10vw, 7.5rem);
+  font-weight: 500;
+  color: #2c2a38; 
+  margin: 0;
+  line-height: 0.9;
+}
+
+/* FIXED: Isolates each project block cleanly into a full-width downward container row */
+.projectItem {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* Separation distance between your description text block and the video card */
+  width: 100%;
+}
+
+/* FIXED: Ensured textual rows clear the left/right constraint bounds cleanly */
+.projectRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.5rem;
+  max-width: 900px; /* Locks text reading length for an ultra-premium layout feel */
+  width: 100%;
+}
+
+/* Clean serialized number indicators */
+.projectNumber {
+  font-family: var(--font-display, "Limelight"), serif; 
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  color: #a0a0a8; 
+  line-height: 1.1;
+}
+
+/* Description paragraph collection wrapper */
+.projectDescription {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem; /* Clean margin padding gaps splitting up your text bullet details */
+}
+
+.projectDescription p {
+  font-family: var(--font-body, "Inter"), sans-serif;
+  font-size: 1.25rem; /* Matches your preferred larger reading text baseline */
+  color: #555555;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Clean styling properties for your repository hyperlink anchor */
+.projectRepoLink {
+  margin-top: 0.5rem;
+  font-weight: 600;
+}
+
+.projectRepoLink a {
+  color: #2c2a38;
+  text-decoration: underline;
+  transition: opacity 0.2s ease;
+}
+
+.projectRepoLink a:hover {
+  opacity: 0.7;
+}
+
+/* FIXED: Video frame box rules scaled to expand beautifully to 100% full container width */
+.videoWrapper {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.04);
+  background-color: #f8f9fa; 
+  border: 1px solid #e9ecef;
+}
+
+.showcaseVideo {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* 📱 Responsive media query overrides for tablets, laptops, and screen zoom levels */
+@media (max-width: 1024px) {
+  .brandingSection {
+    padding: 6rem 4%;
+  }
+
+  .brandingContainer {
+    gap: 5rem;
+  }
+
+  .projectRow {
+    flex-direction: column; /* Shifts number tag directly on top of the text details on smaller viewports */
+    gap: 0.5rem;
+  }
+  
+  .projectDescription p {
+    font-size: 1.15rem;
+  }
+}
