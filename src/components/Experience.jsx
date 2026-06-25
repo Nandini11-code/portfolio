@@ -1,7 +1,8 @@
 import React from 'react';
 import './Experience.css';
-import cakeLogo from '../assets/vcakes.png';  // Put your V_Cakes logo image here
-import bookGraphic from '../assets/books.png'; // Put your book/star graphic asset here
+import cakeLogo from '../assets/vcakes.png';  
+import bookGraphic from '../assets/books.png'; 
+import poppiVideo from '../assets/The.mp4'; 
 
 const Experience = () => {
   return (
@@ -23,7 +24,7 @@ const Experience = () => {
           </div>
         </div>
 
-        {/* Right Column: Graphic Showcases with Connecting Indicator */}
+        {/* Right Column: Graphic Showcases */}
         <div className="experienceGraphics">
           
           {/* Top Logo Asset Container */}
@@ -31,14 +32,16 @@ const Experience = () => {
             <img src={cakeLogo} alt="V_Cakes Logo Design" className="portfolioAsset" />
           </div>
 
-          {/* Decorative Connecting Line with Text Indicator */}
-          <div className="connectingTrack">
-            <span className="trackText">My first logo's</span>
-            <div className="curvedLineSvg">
-              <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M90,10 C30,20 20,80 80,90" stroke="#555555" strokeWidth="1" strokeDasharray="3 3" />
-              </svg>
-            </div>
+          {/* Center Video Asset Container (Poppi Soda) */}
+          <div className="graphicBox centerGraphic">
+            <video 
+              src={poppiVideo} 
+              autoPlay 
+              loop 
+              muted 
+              playsInline 
+              className="portfolioVideoAsset"
+            />
           </div>
 
           {/* Bottom Vector Asset Container */}

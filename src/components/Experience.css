@@ -3,12 +3,11 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background-color: var(--clr-bg-vanilla, #ffffff); /* Fallback to white if variable isn't loaded yet */
+  background-color: var(--clr-bg-vanilla, #ffffff);
   padding: 6rem 4%;
   box-sizing: border-box;
 }
 
-/* FIX: Restricts wide drifting so your portfolio links look natural */
 .experienceContainer {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
@@ -42,20 +41,19 @@
   line-height: 1.7;
 }
 
+/* Vertical stack container for your visual cards */
 .experienceGraphics {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: space-between;
-  height: 580px;
+  height: 760px;
   width: 100%;
 }
 
-.topGraphic {
-  width: 250px;
-  height: 250px;
-  background-color: #f5f4e6;
+/* Core card container styling */
+.graphicBox {
   border-radius: 12px;
   overflow: hidden;
   display: flex;
@@ -63,16 +61,31 @@
   justify-content: center;
   cursor: pointer;
   transition: transform 0.2s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.graphicBox:hover {
+  transform: translateY(-4px);
+}
+
+.topGraphic {
+  width: 250px;
+  height: 250px;
+  background-color: #f5f4e6;
+}
+
+/* Poppi video box configuration with a beautiful offset */
+.centerGraphic {
+  width: 230px;
+  height: 230px;
+  background-color: #fff;
+  align-self: flex-start; 
+  margin-left: 10%;
 }
 
 .bottomGraphic {
   width: 220px;
   height: 220px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: transform 0.2s ease;
 }
 
 .portfolioAsset {
@@ -81,40 +94,10 @@
   object-fit: contain;
 }
 
-/* ─── TRACK AND TEXT CONTAINER POSITIONING ─── */
-.connectingTrack {
-  position: absolute;
-  top: 42%;
-  right: 210px;
-  width: 130px;
-  height: 130px;
-  display: flex;
-  align-items: flex-start; /* Aligns content toward the top area of the curve track */
-}
-
-/* 🚀 FIX: Perfectly centers the text vertically to the left side of the curve line */
-.trackText {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.25rem;
-  font-style: italic;
-  color: var(--clr-text-mahogany, #584738);
-  white-space: nowrap;
-  background-color: transparent; /* Transparent background so it sits organically in empty space */
-  z-index: 2; /* Ensures text is above the curve line */
-  
-  /* Absolute anchoring boundaries */
-  position: absolute;
-  left: -140px;        /* Pushes the text safely away to the left of the curve line */
-  top: 95%;            /* Moves the top edge down to the exact middle of the container box */
-  transform: translateY(-50%); /* Pulls it up by half its own height for flawless centering */
-}
-.curvedLineSvg {
-  width: 200%;
-  height: 300%;
-  position: absolute;
-  top: 0;
-  left: -75%;
-  z-index: 1;
+.portfolioVideoAsset {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Click Animation Class Trigger */
@@ -129,6 +112,7 @@
   100% { transform: scale(1); }
 }
 
+/* Responsive breakdowns */
 @media (max-width: 968px) {
   .experienceContainer {
     grid-template-columns: 1fr;
@@ -139,7 +123,8 @@
     height: auto;
     gap: 3rem;
   }
-  .connectingTrack {
-    display: none;
+  .centerGraphic {
+    align-self: center;
+    margin-left: 0;
   }
 }
